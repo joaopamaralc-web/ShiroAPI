@@ -12,3 +12,4 @@ class User(Base):
     email = Column("email",String)
     password = Column("password",String)
     admin = Column("admin",Boolean)
+    idiom = Column("idiom",String)
