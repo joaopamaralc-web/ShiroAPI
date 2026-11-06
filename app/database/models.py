@@ -12,4 +12,12 @@ class User(Base):
     email = Column("email",String)
     password = Column("password",String)
     admin = Column("admin",Boolean)
-    idiom = Column("idiom",String)
+    language = Column("language",String)
+
+    def __init__(self,username,email,password,language,admin=False):
+        self.username = username
+        self.email = email
+        self.password = password
+        self.language = language
+        self.admin = admin
+
