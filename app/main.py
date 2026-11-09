@@ -12,5 +12,5 @@ app.include_router(auth_router)
 async def home(request: Request):
     return templates.TemplateResponse(request, "index.html")
 
-#uvicorn app.main:app --reload
+#python -m uvicorn app.main:app --reload
 

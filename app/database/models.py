@@ -1,7 +1,13 @@
 from sqlalchemy import create_engine, Column,String,Integer,Boolean
 from sqlalchemy.orm import declarative_base
+from pathlib import Path
 
-db = create_engine("sqlite:///database.db")
+BASE_DIR = Path(__file__).resolve().parent
+DATABASE_URL = f"sqlite:///{BASE_DIR / 'database.db'}"
+db = create_engine(
+    DATABASE_URL,
+    connect_args={"check_same_thread": False}
+)
 Base = declarative_base()
 
 class User(Base):
